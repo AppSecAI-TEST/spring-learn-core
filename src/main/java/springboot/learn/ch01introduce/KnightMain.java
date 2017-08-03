@@ -1,4 +1,4 @@
-package springboot.learn.introduce;
+package springboot.learn.ch01introduce;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
