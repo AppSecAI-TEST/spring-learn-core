@@ -10,7 +10,7 @@ import org.springframework.core.env.Environment;
  * Created by ztwang on 2017/8/8 0008.
  */
 @Configuration
-@PropertySource(value = {"classpath:/ch03app.properties"})
+@PropertySource(value = {"classpath:/compact-disc.properties"})
 public class AppConfig {
     @Autowired
     Environment env;
@@ -18,7 +18,7 @@ public class AppConfig {
     @Bean
     public App getApp() {
         return new App(
-                env.getProperty("app.title"),
-                env.getProperty("app.author"));
+                env.getProperty("cd.title"),
+                env.getProperty("cd.author"));
     }
 }

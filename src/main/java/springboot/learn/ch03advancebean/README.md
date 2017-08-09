@@ -66,8 +66,7 @@ public void setDesert{}
 ## 从properties文件中获取
 ```java
 @Configuration
-// @PropertySource(value = {"classpath:/ch03app.properties"}, encoding='utf-8')
-@PropertySource("classpath:/ch03app.properties")
+@PropertySource(value = {"classpath:/compact-disc.properties"})
 public class AppConfig {
     @Autowired
     Environment env;

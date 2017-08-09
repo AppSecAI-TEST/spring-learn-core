@@ -2,6 +2,7 @@ package springboot.learn.ch02wiringbean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import springboot.learn.common.CompactDisc;
 
 /**
  * Created by ztwang on 2017/7/14 0014.

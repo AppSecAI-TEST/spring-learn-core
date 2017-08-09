@@ -1,6 +1,7 @@
 package springboot.learn.ch02wiringbean;
 
 import org.springframework.stereotype.Component;
+import springboot.learn.common.CompactDisc;
 
 /**
  * Created by ztwang on 2017/7/14 0014.
@@ -12,5 +13,10 @@ public class SgtPeppers implements CompactDisc {
     @Override
     public void play() {
         System.out.println("Playing " + title + " by " + artist);
+    }
+
+    @Override
+    public void playTrack(int i) {
+
     }
 }
