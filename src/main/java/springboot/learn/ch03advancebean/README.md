@@ -63,7 +63,10 @@ public void setDesert{}
 3，4两点`@Scope`中需要设置代理`proxyMode=ScopedProxyMode.INTERFACES`，代理将真正的处理交给Session范围内的Bean
 
 # 运行时值注入
+> 可以参考 <http://www.cnblogs.com/chenpi/p/6212534.html>
 ## 从properties文件中获取
+
+`@PropertySource`一定要放在`@Configuration`下，然后就能随时随地使用`Environment`获取值了
 ```java
 @Configuration
 @PropertySource(value = {"classpath:/compact-disc.properties"})
@@ -85,7 +88,16 @@ T getProperty(String key, Class<T> type) //比如从文件中获得String但实�
 T getProperty(String key, Class<T> type, T defaultValue)
 ```
 
-# SpEL spring表达式
+可以在bean中使用`@Value` 进行运行时值注入,如占位符注入${}但要使用占位符必须在java config或xml文件里
+提供
+```java
+@Bean
+public PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
+    return new PropertySourcesPlaceholderConfigurer();
+}
+```
+
+## SpEL spring表达式
 > 可以用在装配bean上也可以用在使用Thymeleaf模板作为视图的web应用上用以引用模型数据 样式"#{...}"
 
 1. 字面量 `#{1.2} #{false} #{'hello'} #{9.87E4}`
@@ -103,4 +115,6 @@ T getProperty(String key, Class<T> type, T defaultValue)
     - `#{songs.^[condition]}` 查找第一个符合condition的song
     - `#{songs.$[condition]}` 查找最后一个符合condition的song
     - `#{songs.![title]}` 将歌曲的title属性投身成为新的列表
+    
+ SpEL可以在@Value中使用
 
